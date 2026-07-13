@@ -2,6 +2,17 @@
 
 これは、ワールドカップ2026の日本ファンサイトです。
 
+## 実行方法
+
+```
+npm dev
+```
+
+```
+pnpm dev
+```
+
+
 # Astro Starter Kit: Basics
 
 ```sh
