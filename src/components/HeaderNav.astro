@@ -1,11 +1,12 @@
 ---
 import SiteLogo from "@/assets/sitelogo.svg";
 ---
+
 <header class="header">
   <div class="header-inner">
     <!-- 画像の読み込みをAstroで推奨される方法にしたよ -->
-    <a class="header-logo h-full p-1" href="/">
-      <img src={SiteLogo.src} alt="" class="h-full">
+    <a class="header-logo h-full max-lg:pl-0 p-2" href="/">
+      <img src={SiteLogo.src} alt="" class="h-full"/>
     </a>
     <!-- `header-ui`クラス以降にレスポンス対応を書き足したよ  -->
     <nav class="header-ul hidden md:block">

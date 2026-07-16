@@ -1,68 +1,34 @@
 ---
+import consts from "@/consts";
 import Root from "@/layouts/Root.astro";
 import TopFirstCover from "@/components/TopFirstCover.astro";
 import HeaderNav from "@/components/HeaderNav.astro";
+import AbstractSection from "@/components/AbstractSection.astro";
+import FooterNav from "@/components/FooterNav.astro";
 ---
 
-<Root title="FIFA WorldCup 2026 Unofficial Japan Funsite">
+<Root title={consts.SITE_NAME}>
   <TopFirstCover/>
   <HeaderNav/>
-  <main class="max-w-3xl px-5 mx-auto my-20 space-y-10">
-    <section>
-      <h2 class="mb-5 text-center underline decoration-3 underline-offset-8 text-3xl font-bold">セクションタイトル</h2>
-      <p>
-        吾輩わがはいは猫である。名前はまだ無い。
-        どこで生れたかとんと見当けんとうがつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
-        吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪どうあくな種族であったそうだ。
-      </p>
-    </section>
-    <section>
-      <h2 class="mb-5 text-center underline decoration-3 underline-offset-8 text-3xl font-bold">セクションタイトル</h2>
-      <p>
-        吾輩わがはいは猫である。名前はまだ無い。
-        どこで生れたかとんと見当けんとうがつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
-        吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪どうあくな種族であったそうだ。
-      </p>
-    </section>
-    <section>
-      <h2 class="mb-5 text-center underline decoration-3 underline-offset-8 text-3xl font-bold">セクションタイトル</h2>
-      <p>
-        吾輩わがはいは猫である。名前はまだ無い。
-        どこで生れたかとんと見当けんとうがつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
-        吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪どうあくな種族であったそうだ。
-      </p>
-    </section>
-    <section>
-      <h2 class="mb-5 text-center underline decoration-3 underline-offset-8 text-3xl font-bold">セクションタイトル</h2>
-      <p>
-        吾輩わがはいは猫である。名前はまだ無い。
-        どこで生れたかとんと見当けんとうがつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
-        吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪どうあくな種族であったそうだ。
-      </p>
-    </section>
-    <section>
-      <h2 class="mb-5 text-center underline decoration-3 underline-offset-8 text-3xl font-bold">セクションタイトル</h2>
-      <p>
-        吾輩わがはいは猫である。名前はまだ無い。
-        どこで生れたかとんと見当けんとうがつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
-        吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪どうあくな種族であったそうだ。
-      </p>
-    </section>
-    <section>
-      <h2 class="mb-5 text-center underline decoration-3 underline-offset-8 text-3xl font-bold">セクションタイトル</h2>
-      <p>
-        吾輩わがはいは猫である。名前はまだ無い。
-        どこで生れたかとんと見当けんとうがつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
-        吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪どうあくな種族であったそうだ。
-      </p>
-    </section>
-    <section>
-      <h2 class="mb-5 text-center underline decoration-3 underline-offset-8 text-3xl font-bold">セクションタイトル</h2>
-      <p>
-        吾輩わがはいは猫である。名前はまだ無い。
-        どこで生れたかとんと見当けんとうがつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
-        吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪どうあくな種族であったそうだ。
-      </p>
-    </section>
+  <main class="max-w-3xl px-5 mx-auto my-20 space-y-16">
+    <AbstractSection title="サンプルタイトル">
+      吾輩わがはいは猫である。名前はまだ無い。 どこで生れたかとんと見当けんとうがつかぬ。
+      何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+      吾輩はここで始めて人間というものを見た。
+      しかもあとで聞くとそれは書生という人間中で一番獰悪どうあくな種族であったそうだ。
+    </AbstractSection>
+    <AbstractSection title="サンプルタイトル">
+      吾輩わがはいは猫である。名前はまだ無い。 どこで生れたかとんと見当けんとうがつかぬ。
+      何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+      吾輩はここで始めて人間というものを見た。
+      しかもあとで聞くとそれは書生という人間中で一番獰悪どうあくな種族であったそうだ。
+    </AbstractSection>
+    <AbstractSection title="サンプルタイトル">
+      吾輩わがはいは猫である。名前はまだ無い。 どこで生れたかとんと見当けんとうがつかぬ。
+      何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+      吾輩はここで始めて人間というものを見た。
+      しかもあとで聞くとそれは書生という人間中で一番獰悪どうあくな種族であったそうだ。
+    </AbstractSection>
   </main>
+  <FooterNav/>
 </Root>

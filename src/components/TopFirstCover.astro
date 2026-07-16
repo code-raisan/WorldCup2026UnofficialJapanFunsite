@@ -1,20 +1,23 @@
 ---
+import consts from "@/consts";
 import SiteLogoWhite from "@/assets/sitelogo-white.svg";
+import SiteLogoWhiteNarrow from "@/assets/sitelogo-white-narrow.svg";
 ---
 <div class="h-svh w-full z-0">
   <div class="h-full w-full bg-black/40 text-white relative">
-    <div class="absolute bottom-0 left-0 m-10">
+    <div class="absolute bottom-0 left-0 m-2 lg:m-10">
       <div class="w-full">
-        <SiteLogoWhite class:list={"w-full"}/>
+        <img src={SiteLogoWhite.src} alt="" class="hidden lg:block"/>
+        <img src={SiteLogoWhiteNarrow.src} alt="" class="block lg:hidden"/>
       </div>
-      <p>FIFA ワールドカップ 2026 非公式ファンサイト</p>
+      <p class="text-white">{consts.SITE_NAME_JA}</p>
     </div>
   </div>
   <div class="yt-embed-wrapper">
     <iframe
       id="yt-embed"
       width="560" height="315"
-      src="ttps://www.youtube-nocookie.com/embed/eHGpAbpVX3U?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1"
+      src="https://www.youtube-nocookie.com/embed/eHGpAbpVX3U?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&cc_load_policy=0"
       title="YouTube video player"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
