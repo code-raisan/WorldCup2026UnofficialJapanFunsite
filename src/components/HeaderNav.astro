@@ -1,0 +1,72 @@
+---
+import SiteLogo from "@/assets/sitelogo.svg";
+---
+<header class="header">
+  <div class="header-inner">
+    <!-- 画像の読み込みをAstroで推奨される方法にしたよ -->
+    <a class="header-logo h-full p-1" href="/">
+      <img src={SiteLogo.src} alt="" class="h-full">
+    </a>
+    <!-- `header-ui`クラス以降にレスポンス対応を書き足したよ  -->
+    <nav class="header-ul hidden md:block">
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Members</a></li>
+        <li><a href="#">Games</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  /* 追加調整したよ */
+
+  .header{
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: /*800px*/ 95%;
+    /*max-width:95%;*/
+    background-color: /*#ffffff*/ #FFFFFF;
+    height: 50px;
+    z-index: 10;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .header-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 30px;
+  }
+
+  /*.header-logo img{
+    height: 25px;
+    width: auto;
+    display: block;
+  }*/
+
+  .header-ul ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header-ul a{
+    text-decoration: none;
+    color:#000;
+    font-weight: bold;
+  }
+
+  /*main{
+    padding-top: 120px;
+    padding-left: 100px;
+    padding-right:100px;
+  }*/
+</style>
