@@ -1,0 +1,11 @@
+---
+const { title, morelink } = Astro.props;
+---
+
+<section>
+  <h2 class="mb-5 text-center underline decoration-3 underline-offset-8 text-3xl font-bold">{title}</h2>
+  <p>
+    <slot/>
+  </p>
+
+</section>
