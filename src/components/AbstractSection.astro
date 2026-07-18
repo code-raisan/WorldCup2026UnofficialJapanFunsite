@@ -1,11 +1,16 @@
 ---
-const { title, morelink } = Astro.props;
+import { Button } from "@/components/shadcnui/button";
+
+const { title, aka, morelink } = Astro.props;
 ---
 
-<section>
-  <h2 class="mb-5 text-center underline decoration-3 underline-offset-8 text-3xl font-bold">{title}</h2>
-  <p>
+<section class="w-full flex flex-col items-center space-y-5">
+  <div class="w-fit p-3 px-10 mb-5 text-center border-b-4 border-[#333333]">
+    <h2 class="text-3xl font-bold">{title}</h2>
+    <p class="text-xl">{aka}</p>
+  </div>
+  <div class="w-full">
     <slot/>
-  </p>
-
+  </div>
+  {morelink && <Button variant={"default"} size={"lg"}><a href={morelink}>もっとみる</a></Button>}
 </section>

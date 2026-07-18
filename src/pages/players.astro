@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import consts from "@/consts";
+import BasicLayout from "@/layouts/BasicLayout.astro";
+import BasicSection from "@/components/BasicSection.astro";
+import BasicPlayerSection from "@/components/BasicPlayerSection.astro";
+
+import LionelMessi2026 from "@/assets/lionelmessi-2026.jpg";
+---
+
+<BasicLayout
+  title={`Players - ${consts.SITE_NAME}`}
+  heading="FEATURED PLAYERS"
+  details="注目の選手">
+  <BasicPlayerSection
+    slug="lionelmessi"
+    name="リオネル・アンドレス・メッシ・クッシッティーニ"
+    officialname="Lionel Andrés Messi Cuccittini"
+    image={LionelMessi2026}
+    license={<>&copy; Bryan Berlin (CC BY-SA 4.0), via <a class="underline hover:no-underline" href="https://commons.wikimedia.org/w/index.php?curid=195518244">Wikimedia Commons</a></>}>
+    吾輩わがはいは猫である。名前はまだ無い。 どこで生れたかとんと見当けんとうがつかぬ。
+    何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+    吾輩はここで始めて人間というものを見た。
+    しかもあとで聞くとそれは書生という人間中で一番獰悪どうあくな種族であったそうだ。
+  </BasicPlayerSection>
+  <BasicPlayerSection
+    slug="lionelmessi"
+    name="リオネル・アンドレス・メッシ・クッシッティーニ"
+    officialname="Lionel Andrés Messi Cuccittini"
+    image={LionelMessi2026}
+    license={<>&copy; Bryan Berlin (CC BY-SA 4.0), via <a class="underline hover:no-underline" href="https://commons.wikimedia.org/w/index.php?curid=195518244">Wikimedia Commons</a></>}>
+    吾輩わがはいは猫である。名前はまだ無い。 どこで生れたかとんと見当けんとうがつかぬ。
+    何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+    吾輩はここで始めて人間というものを見た。
+    しかもあとで聞くとそれは書生という人間中で一番獰悪どうあくな種族であったそうだ。
+  </BasicPlayerSection>
+  <BasicPlayerSection
+    slug="lionelmessi"
+    name="リオネル・アンドレス・メッシ・クッシッティーニ"
+    officialname="Lionel Andrés Messi Cuccittini"
+    image={LionelMessi2026}
+    license={<>&copy; Bryan Berlin (CC BY-SA 4.0), via <a class="underline hover:no-underline" href="https://commons.wikimedia.org/w/index.php?curid=195518244">Wikimedia Commons</a></>}>
+    吾輩わがはいは猫である。名前はまだ無い。 どこで生れたかとんと見当けんとうがつかぬ。
+    何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+    吾輩はここで始めて人間というものを見た。
+    しかもあとで聞くとそれは書生という人間中で一番獰悪どうあくな種族であったそうだ。
+  </BasicPlayerSection>
+</BasicLayout>
