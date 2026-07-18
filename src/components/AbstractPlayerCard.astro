@@ -1,0 +1,17 @@
+---
+import { Image } from "astro:assets";
+const { name, image, link, license } = Astro.props;
+---
+
+<div class="w-48">
+  <div class="relative">
+    <Image
+      src={image} alt={`${name}選手の画像`} loading={"lazy"}
+      class="aspect-2/3 object-cover w-full rounded-md bg-gray-300"/>
+    <div class="absolute bottom-2 left-2 w-full space-y-1">
+      <h3 class="text-xl font-bold bg-white w-fit px-1 mr-5 -skew-x-12">{name}</h3>
+      <a href={link} class="block bg-white w-fit px-1 underline hover:no-underline font-extrabold -skew-x-12">VIEW MORE</a>
+    </div>
+  </div>
+  {license && <small class="text-gray-500 text-[0.6em]/3 inline-block text-wrap break-all">{license}</small>}
+</div>

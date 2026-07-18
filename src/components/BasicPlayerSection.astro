@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+
+const { slug, name, officialname, image, license } = Astro.props;
+---
+
+<section id={slug} class="mx-auto w-full max-w-4xl flex flex-col md:flex-row items-center space-y-5 md:items-start md:space-y-0 md:space-x-5">
+  <Image
+    src={image} alt={`${name}選手の画像`} loading={"lazy"}
+    class="aspect-2/3 object-cover max-w-64 w-full rounded-md bg-gray-300"/>
+  <div class="space-y-5">
+    <div>
+      <h2 class="text-3xl font-bold">{name}</h2>
+      <p class="text-xl font-bold">{officialname}</p>
+    </div>
+    <p>
+      <slot/>
+    </p>
+    {license && <small class="text-gray-500 text-sm/3 inline-block text-wrap break-all">{license}</small>}
+  </div>
+</section>

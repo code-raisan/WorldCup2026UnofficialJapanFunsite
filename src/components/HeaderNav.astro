@@ -1,19 +1,26 @@
 ---
-import SiteLogo from "@/assets/sitelogo.svg";
+/**
+ * @author Kanta-186
+ * @coauthor code-raisan
+ */
+
+import { Image } from "astro:assets";
+import consts from "@/consts";
+import SiteLogoBlack from "@/assets/sitelogo-black.svg";
 ---
 
-<header class="header">
+<header class="header shadow-xl/10">
   <div class="header-inner">
     <!-- 画像の読み込みをAstroで推奨される方法にしたよ -->
-    <a class="header-logo h-full max-lg:pl-0 p-2" href="/">
-      <img src={SiteLogo.src} alt="" class="h-full"/>
+    <a class="header-logo h-full max-lg:pl-0 p-1.5" href="/">
+      <Image src={SiteLogoBlack} alt={consts.SITE_NAME} loading={"eager"} class="w-auto h-full"/>
     </a>
     <!-- `header-ui`クラス以降にレスポンス対応を書き足したよ  -->
     <nav class="header-ul hidden md:block">
       <ul>
-        <li><a href="#" class="hover:underline">About This Games</a></li>
-        <li><a href="#" class="hover:underline">Players</a></li>
-        <li><a href="#" class="hover:underline">Games</a></li>
+        <li><a href="/overview" class="hover:underline">OVERVIEW</a></li>
+        <li><a href="/players" class="hover:underline">PLAYERS</a></li>
+        <li><a href="/games" class="hover:underline">GAMES</a></li>
       </ul>
     </nav>
   </div>
@@ -34,7 +41,7 @@ import SiteLogo from "@/assets/sitelogo.svg";
     height: 50px;
     z-index: 10;
     border-radius: 30px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    /*box-shadow: 0 4px 10px rgba(0,0,0,0.1);*/
   }
 
   .header-inner{
@@ -60,8 +67,8 @@ import SiteLogo from "@/assets/sitelogo.svg";
   }
 
   .header-ul a{
-    text-decoration: none;
-    color:#000;
+    /*text-decoration: none;*/ /* tailwindcssを上書きしてしまうため無効化。リセットCSSにより既に定義済み */
+    /*color:#000;*/ /* グローバルの色定義に準拠 */
     font-weight: bold;
   }
 
