@@ -1,10 +1,9 @@
 ---
-import { Image } from "astro:assets";
 import consts from "@/consts";
 import BasicLayout from "@/layouts/BasicLayout.astro";
-import BasicSection from "@/components/BasicSection.astro";
 import BasicPlayerSection from "@/components/BasicPlayerSection.astro";
 
+// Assets
 import LionelMessi2026 from "@/assets/lionelmessi-2026.jpg";
 import KylianMbappe2026 from "@/assets/Kylian_Mbappe_-_France_v_Norway_-_26_June_2026_(cropped).jpg";
 import LamineYamal2026 from "@/assets/Lamineyamal-2026.jpg";
@@ -13,7 +12,7 @@ import ViníciusJúnior2026 from "@/assets/Vinícius_Júnior.jpg";
 ---
 
 <BasicLayout
-  title={`Players - ${consts.SITE_NAME}`}
+  title={`PLAYERS - ${consts.SITE_NAME}`}
   heading="FEATURED PLAYERS"
   details="注目の選手">
   <BasicPlayerSection
@@ -24,10 +23,12 @@ import ViníciusJúnior2026 from "@/assets/Vinícius_Júnior.jpg";
     license={<>&copy; Bryan Berlin (CC BY-SA 4.0), via <a class="underline hover:no-underline" href="https://commons.wikimedia.org/w/index.php?curid=195518244">Wikimedia Commons</a></>}>
     ・豊富な経験と卓越した技術を持つ<span class="font-bold">世界最高峰の選手</span><br/>
     ・ベテランとなった現在でも<span class="font-bold">攻撃の起点</span>としてチームを支え、大会屈指の注目選手<br/>
+    <br/>
     <span class="font-bold">【注目ポイント】</span><br/>
     メッシは長年世界トップレベルで活躍し続けているレジェンドである。
     年齢を重ねても高い技術や視野の広さは衰えず、味方を生かすパスや決定力のあるシュートは今でも世界最高クラスだと思う。
-    派手なプレーだけでなく、試合全体を落ち着かせる存在感も魅力である。経験豊富な選手だからこそ、大事な場面で違いを生み出せるところが注目ポイントである。
+    派手なプレーだけでなく、試合全体を落ち着かせる存在感も魅力である。
+    経験豊富な選手だからこそ、大事な場面で違いを生み出せるところが注目ポイントである。
   </BasicPlayerSection>
   <BasicPlayerSection
     slug="kylianmbappe"
@@ -39,12 +40,10 @@ import ViníciusJúnior2026 from "@/assets/Vinícius_Júnior.jpg";
     ・ゴールデンボールの候補の筆頭とされ、優勝候補フランスを牽引する存在<br />
     <br />
     <span class="font-bold">【注目ポイント】</span><br />
-
-    最大の魅力は圧倒的なスピードとゴール前での決定力であり、相手ディフェンダーを一瞬で置き去りにするプレーは何度見ても
-    驚かされる。また、大舞台でも結果を残せる勝負強さがあり、ワールドカップのような大きな大会では特に存在感を発揮する選
-    手だと感じる。試合の流れを一人で変えられる能力を持っており、どんな場面でもゴールを期待させてくれるところが推しポイ
-    ントである。
-
+    最大の魅力は圧倒的なスピードとゴール前での決定力であり、
+    相手ディフェンダーを一瞬で置き去りにするプレーは何度見ても驚かされる。
+    また、大舞台でも結果を残せる勝負強さがあり、ワールドカップのような大きな大会では特に存在感を発揮する選手だと感じる。
+    試合の流れを一人で変えられる能力を持っており、どんな場面でもゴールを期待させてくれるところが推しポイントである。
   </BasicPlayerSection>
   <BasicPlayerSection
     slug="lamineyamal"
@@ -56,12 +55,11 @@ import ViníciusJúnior2026 from "@/assets/Vinícius_Júnior.jpg";
     ・若手選手の中でも最も注目されており、スペインの攻撃の中心として期待されている<br />
     <br />
     <span class="font-bold">【注目ポイント】</span><br />
-
-    ヤマルは若い選手でありながら落ち着いたプレーができる点が魅力だと思う。ドリブルやパスのセンスが非常に高く、相手をかわす
-    技術や味方を生かすプレーには将来性を感じる。年齢を考えるとまだまだ成長の余地があり、これから世界最高峰の選手になる可能
-    性を秘めている。若手らしい思い切りの良さと創造性を兼ね備えており、見ていてワクワクする選手なので今大会でも活躍を期待さ
-    れている。
-
+    ヤマルは若い選手でありながら落ち着いたプレーができる点が魅力だと思う。
+    ドリブルやパスのセンスが非常に高く、相手をかわす技術や味方を生かすプレーには将来性を感じる。
+    年齢を考えるとまだまだ成長の余地があり、これから世界最高峰の選手になる可能性を秘めている。
+    若手らしい思い切りの良さと創造性を兼ね備えており、
+    見ていてワクワクする選手なので今大会でも活躍を期待されている。
   </BasicPlayerSection>
   <BasicPlayerSection
     slug="judebellingham"
@@ -71,13 +69,12 @@ import ViníciusJúnior2026 from "@/assets/Vinícius_Júnior.jpg";
     license={<>&copy; Bryan Berlin (CC BY-SA 4.0), via <a class="underline hover:no-underline" href="https://commons.wikimedia.org/w/index.php?curid=195518244">Wikimedia Commons</a></>}>
     ・攻守両面で活躍できる<span class="font-bold">万能型ミッドフィルダー</span><br />
     ・<span class="font-bold">得点力</span>と<span class="font-bold">ゲームメイク能力</span>を兼ね備え、イングランドの躍進を支える中心選手<br />
-     <br />
-     <span class="font-bold">【注目ポイント】</span><br />
-
-    ベリンガムは攻撃だけでなく守備にも積極的に関わる万能型のミッドフィルダーである。ボールを奪う力だけでなく、得点やアシストに
-    も絡めるため、試合全体に与える影響が非常に大きい選手だと感じる。また、若いにもかかわらずリーダーシップがあり、重要な試合で
-    も堂々とプレーできる精神力も魅力である。チームの中心として試合をコントロールする姿が印象的である。
-
+    <br />
+    <span class="font-bold">【注目ポイント】</span><br />
+    ベリンガムは攻撃だけでなく守備にも積極的に関わる万能型のミッドフィルダーである。
+    ボールを奪う力だけでなく、得点やアシストにも絡めるため、試合全体に与える影響が非常に大きい選手だと感じる。
+    また、若いにもかかわらずリーダーシップがあり、重要な試合でも堂々とプレーできる精神力も魅力である。
+    チームの中心として試合をコントロールする姿が印象的である。
   </BasicPlayerSection>
   <BasicPlayerSection
     slug="viniciusjunior"
@@ -89,11 +86,9 @@ import ViníciusJúnior2026 from "@/assets/Vinícius_Júnior.jpg";
     ・<span class="font-bold">創造性</span>と<span class="font-bold">チームワーク</span>を重視する選手<br />
     <br />
     <span class="font-bold">【注目ポイント】</span><br />
-
-    ヴィニシウス・ジュニオールは、スピードと決定力に優れたストライカーとして知られている。彼のプレーは、相手のディフェンダーを
-    かわす技術や、味方を生かすプレーに魅力がある。また、大舞台でも結果を残せる勝負強さがあり、ワールドカップのような大きな大会
-    では特に存在感を発揮する選手だと感じる。試合の流れを一人で変えられる能力を持っており、どんな場面でもゴールを期待させてくれ
-    るところが推しポイントである。
-
+    ヴィニシウス・ジュニオールは、スピードと決定力に優れたストライカーとして知られている。
+    彼のプレーは、相手のディフェンダーをかわす技術や、味方を生かすプレーに魅力がある。
+    また、大舞台でも結果を残せる勝負強さがあり、ワールドカップのような大きな大会では特に存在感を発揮する選手だと感じる。
+    試合の流れを一人で変えられる能力を持っており、どんな場面でもゴールを期待させてくれるところが推しポイントである。
   </BasicPlayerSection>
 </BasicLayout>

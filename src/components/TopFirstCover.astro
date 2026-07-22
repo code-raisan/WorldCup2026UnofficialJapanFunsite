@@ -1,5 +1,7 @@
 ---
 import consts from "@/consts";
+
+// Assets
 import SiteLogoWhite from "@/assets/sitelogo-white.svg";
 import SiteLogoWhiteNarrow from "@/assets/sitelogo-white-narrow.svg";
 ---
@@ -10,7 +12,15 @@ import SiteLogoWhiteNarrow from "@/assets/sitelogo-white-narrow.svg";
         <img src={SiteLogoWhite.src} loading="eager" alt={consts.SITE_NAME} class="hidden lg:block"/>
         <img src={SiteLogoWhiteNarrow.src} loading="eager" alt={consts.SITE_NAME} class="block lg:hidden"/>
       </div>
-      <p class="text-white pl-3 font-bold text-md text-ellipsis">{consts.SITE_NAME_JA}</p>
+      <div>
+        <p class="text-white pl-3 font-bold text-md text-ellipsis">{consts.SITE_NAME_JA}</p>
+        <p class="text-white pl-3 text-ellipsis">
+          背景映像:
+          <a href="https://youtu.be/eHGpAbpVX3U" class="underline hover:no-underline">
+            「最高の景色を見せてくれ」JFATV on YouTube
+          </a>
+        </p>
+      </div>
     </div>
   </div>
   <div class="yt-embed-wrapper">
