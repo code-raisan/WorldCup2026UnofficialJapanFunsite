@@ -12,5 +12,12 @@ const { title, aka, morelink } = Astro.props;
   <div class="w-full">
     <slot/>
   </div>
-  {morelink && <Button variant={"default"} size={"lg"}><a href={morelink}>もっとみる</a></Button>}
+  {
+    morelink &&
+    <a class="inline-flex items-center gap-2 px-4 py-2 bg-[#333333] hover:bg-[#111111]
+      text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-200"
+      href={morelink}>
+        もっと見る
+    </a>
+  }
 </section>

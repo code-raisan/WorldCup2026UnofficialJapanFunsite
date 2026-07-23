@@ -17,7 +17,6 @@ import SiteLogoBlack from "@/assets/sitelogo-black.svg";
     <a class="header-logo h-full max-lg:pl-0 p-1.5" href="/">
       <Image src={SiteLogoBlack} alt={consts.SITE_NAME} loading={"eager"} class="w-auto h-full"/>
     </a>
-    <!-- `header-ui`クラス以降にレスポンス対応を書き足したよ  -->
     <nav class="header-ul hidden md:block">
       <ul>
         <li><a href="/overview" class="hover:underline">OVERVIEW</a></li>
@@ -25,12 +24,32 @@ import SiteLogoBlack from "@/assets/sitelogo-black.svg";
         <li><a href="/games" class="hover:underline">GAMES</a></li>
       </ul>
     </nav>
+    <button
+      type="button" id="hamburger-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu"
+      class="md:hidden flex flex-col justify-between w-6 h-4.5 bg-transparent border-0 cursor-pointer p-0 z-50"
+    >
+      <span class="bar-top w-full h-0.5 bg-black rounded-full transition-transform duration-300 origin-center"></span>
+      <span class="bar-middle w-full h-0.5 bg-black rounded-full transition-opacity duration-300"></span>
+      <span class="bar-bottom w-full h-0.5 bg-black rounded-full transition-transform duration-300 origin-center"></span>
+    </button>
+  </div>
+  <div
+    id="mobile-menu" aria-hidden="true"
+    class="md:hidden absolute top-14.5 left-0 right-0 bg-white rounded-2xl p-3 shadow-xl border border-black/10 opacity-0
+      pointer-events-none -translate-y-2 transition-all duration-200 ease-out"
+  >
+    <nav>
+      <ul class="flex flex-col gap-1 font-bold">
+        <li><a href="/overview" class="block px-4 py-2.5 rounded-xl text-black hover:bg-gray-100 transition-colors">OVERVIEW</a></li>
+        <li><a href="/players" class="block px-4 py-2.5 rounded-xl text-black hover:bg-gray-100 transition-colors">PLAYERS</a></li>
+        <li><a href="/games" class="block px-4 py-2.5 rounded-xl text-black hover:bg-gray-100 transition-colors">GAMES</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
 <style>
   /* 追加調整したよ */
-
   .header{
     position: fixed;
     top: 20px;
@@ -80,3 +99,66 @@ import SiteLogoBlack from "@/assets/sitelogo-black.svg";
     padding-right:100px;
   }*/
 </style>
+
+<script>
+  const setupMobileMenu = () =>{
+    const btn = document.getElementById("hamburger-btn");
+    const menu = document.getElementById("mobile-menu");
+    if(!btn || !menu) return;
+
+    if(btn.hasAttribute("data-initialized")) return;
+    btn.setAttribute("data-initialized", "true");
+
+    const barTop = btn.querySelector(".bar-top");
+    const barMiddle = btn.querySelector(".bar-middle");
+    const barBottom = btn.querySelector(".bar-bottom");
+
+    const toggleMenu = (show?: boolean) =>{
+      if(!btn || !menu) return;
+      const isOpen = show !== undefined ? show : !btn.classList.contains("active");
+
+      if(isOpen){
+        btn.classList.add("active");
+        barTop?.classList.add("translate-y-[8px]", "rotate-45");
+        barMiddle?.classList.add("opacity-0");
+        barBottom?.classList.add("-translate-y-[8px]", "-rotate-45");
+        menu.classList.remove("opacity-0", "pointer-events-none", "-translate-y-2");
+        menu.classList.add("opacity-100", "pointer-events-auto", "translate-y-0");
+      }else{
+        btn.classList.remove("active");
+        barTop?.classList.remove("translate-y-[8px]", "rotate-45");
+        barMiddle?.classList.remove("opacity-0");
+        barBottom?.classList.remove("-translate-y-[8px]", "-rotate-45");
+        menu.classList.remove("opacity-100", "pointer-events-auto", "translate-y-0");
+        menu.classList.add("opacity-0", "pointer-events-none", "-translate-y-2");
+      }
+
+      btn.setAttribute("aria-expanded", String(isOpen));
+      btn.setAttribute("aria-label", isOpen ? "メニューを閉じる" : "メニューを開く");
+      menu.setAttribute("aria-hidden", String(!isOpen));
+    }
+
+    btn.addEventListener("click", e => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    menu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => toggleMenu(false));
+    });
+
+    document.addEventListener("click", e => {
+      if(btn.classList.contains("active")){
+        const target = e.target as Node;
+        if(!btn.contains(target) && !menu.contains(target)) toggleMenu(false);
+      }
+    });
+
+    document.addEventListener("keydown", e => {
+      if(e.key === "Escape" && btn.classList.contains("active")) toggleMenu(false);
+    });
+  }
+
+  setupMobileMenu();
+  document.addEventListener("astro:page-load", setupMobileMenu);
+</script>

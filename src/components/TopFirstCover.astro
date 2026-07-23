@@ -5,33 +5,112 @@ import consts from "@/consts";
 import SiteLogoWhite from "@/assets/sitelogo-white.svg";
 import SiteLogoWhiteNarrow from "@/assets/sitelogo-white-narrow.svg";
 ---
-<div class="h-svh w-full z-0">
-  <div class="h-full w-full bg-black/40 text-white relative">
+
+<div class="h-svh w-full z-0 relative overflow-hidden">
+  <div class="h-full w-full bg-black/40 text-white relative z-10">
     <div class="pb-5 space-y-5 absolute bottom-0 left-0 m-2 lg:m-10">
       <div class="w-full">
-        <img src={SiteLogoWhite.src} loading="eager" alt={consts.SITE_NAME} class="hidden lg:block"/>
-        <img src={SiteLogoWhiteNarrow.src} loading="eager" alt={consts.SITE_NAME} class="block lg:hidden"/>
+        <img
+          src={SiteLogoWhite.src}
+          loading="eager"
+          alt={consts.SITE_NAME}
+          class="hidden lg:block"
+        />
+        <img
+          src={SiteLogoWhiteNarrow.src}
+          loading="eager"
+          alt={consts.SITE_NAME}
+          class="block lg:hidden"
+        />
       </div>
       <div>
-        <p class="text-white pl-3 font-bold text-md text-ellipsis">{consts.SITE_NAME_JA}</p>
+        <p class="text-white pl-3 font-bold text-md text-ellipsis">
+          {consts.SITE_NAME_JA}
+        </p>
         <p class="text-white pl-3 text-ellipsis">
           背景映像:
-          <a href="https://youtu.be/eHGpAbpVX3U" class="underline hover:no-underline">
-            「最高の景色を見せてくれ」JFATV on YouTube
+          <a
+            href="https://youtu.be/eHGpAbpVX3U"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="ml-2 text-sm underline hover:no-underline"
+          >
+            サッカー日本代表 FIFAワールドカップ2026
+            決勝トーナメントへ「最高の景色を見せてくれ」JFATV on YouTube
           </a>
         </p>
       </div>
+    </div>
+    <div
+      class="absolute top-22.5 right-4 sm:right-6 lg:right-10 flex items-center gap-2 z-20"
+    >
+      <button
+        id="video-play-btn"
+        type="button"
+        aria-label="動画の再生/一時停止を切り替え"
+        class="flex items-center gap-2 px-3.5 py-2 rounded-full bg-black/60 hover:bg-black/80
+          text-white text-xs sm:text-sm font-medium backdrop-blur-md border border-white/20 shadow-lg transition-all duration-200 active:scale-95 cursor-pointer"
+      >
+        <svg
+          id="icon-pause"
+          class="w-4 h-4"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+        </svg>
+        <svg
+          id="icon-play"
+          class="w-4 h-4 hidden"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path d="M8 5v14l11-7z"></path>
+        </svg>
+        <span id="play-btn-label">PLAYING</span>
+      </button>
+      <button
+        id="video-mute-btn"
+        type="button"
+        aria-label="動画の音声を切り替え"
+        class="flex items-center gap-2 px-3.5 py-2 rounded-full bg-black/60 hover:bg-black/80
+          text-white text-xs sm:text-sm font-medium backdrop-blur-md border border-white/20 shadow-lg transition-all duration-200 active:scale-95 cursor-pointer"
+      >
+        <svg
+          id="icon-muted"
+          class="w-4 h-4"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"
+          ></path>
+        </svg>
+        <svg
+          id="icon-unmuted"
+          class="w-4 h-4 hidden"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
+          ></path>
+        </svg>
+        <span id="mute-btn-label">SOUND OFF</span>
+      </button>
     </div>
   </div>
   <div class="yt-embed-wrapper">
     <iframe
       id="yt-embed"
-      width="560" height="315"
-      src="https://www.youtube-nocookie.com/embed/eHGpAbpVX3U?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&cc_load_policy=0"
+      width="560"
+      height="315"
+      src="https://www.youtube-nocookie.com/embed/eHGpAbpVX3U?autoplay=1&mute=1&loop=1&playlist=eHGpAbpVX3U&controls=0&showinfo=0&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&cc_load_policy=0&enablejsapi=1"
       title="YouTube video player"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin">
+      referrerpolicy="strict-origin-when-cross-origin"
+    >
     </iframe>
   </div>
 </div>
@@ -64,3 +143,67 @@ import SiteLogoWhiteNarrow from "@/assets/sitelogo-white-narrow.svg";
     min-height: 56.25svw;
   }
 </style>
+
+<script>
+  const setupVideoControls = () => {
+    const iframe = document.getElementById("yt-embed") as HTMLIFrameElement | null;
+    const playBtn = document.getElementById("video-play-btn");
+    const muteBtn = document.getElementById("video-mute-btn");
+
+    if (!iframe || !playBtn || !muteBtn) return;
+
+    let isPlaying = true;
+    let isMuted = true;
+
+    const iconPlay = document.getElementById("icon-play");
+    const iconPause = document.getElementById("icon-pause");
+    const playLabel = document.getElementById("play-btn-label");
+
+    const iconMuted = document.getElementById("icon-muted");
+    const iconUnmuted = document.getElementById("icon-unmuted");
+    const muteLabel = document.getElementById("mute-btn-label");
+
+    const postYTCommand = (func: string, args: any[] = []) => {
+      if (iframe && iframe.contentWindow) iframe.contentWindow.postMessage(JSON.stringify({ event: "command", func, args }), "*");
+    };
+
+    iframe.addEventListener("load", () => {
+      //setTimeout(() => postYTCommand("unloadModule", ["captions"]), 1000);
+      postYTCommand("unloadModule", ["captions"]);
+    });
+    postYTCommand("unloadModule", ["captions"]);
+
+    playBtn.addEventListener("click", () => {
+      isPlaying = !isPlaying;
+      if (isPlaying) {
+        postYTCommand("playVideo");
+        iconPlay?.classList.add("hidden");
+        iconPause?.classList.remove("hidden");
+        if (playLabel) playLabel.textContent = "PLAYING";
+      } else {
+        postYTCommand("pauseVideo");
+        iconPause?.classList.add("hidden");
+        iconPlay?.classList.remove("hidden");
+        if (playLabel) playLabel.textContent = "PAUSE";
+      }
+    });
+
+    muteBtn.addEventListener("click", () => {
+      isMuted = !isMuted;
+      if (isMuted) {
+        postYTCommand("mute");
+        iconUnmuted?.classList.add("hidden");
+        iconMuted?.classList.remove("hidden");
+        if (muteLabel) muteLabel.textContent = "SOUND OFF";
+      } else {
+        postYTCommand("unMute");
+        iconMuted?.classList.add("hidden");
+        iconUnmuted?.classList.remove("hidden");
+        if (muteLabel) muteLabel.textContent = "SOUND ON";
+      }
+    });
+  };
+
+  setupVideoControls();
+  document.addEventListener("astro:page-load", setupVideoControls);
+</script>
