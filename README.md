@@ -28,9 +28,7 @@ pnpm dev
 pnpm build
 ```
 
-## LICENSE
-
-## License
+## ライセンス
 
 本リポジトリはソースコードと第三者コンテンツで異なるライセンス・権利状態が併存しています。
 詳細は[LICENSE.md](LICENSE.md)をご確認ください。
