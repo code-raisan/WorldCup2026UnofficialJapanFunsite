@@ -3,12 +3,18 @@ import consts from "@/consts";
 import BasicLayout from "@/layouts/BasicLayout.astro";
 import BasicPlayerSection from "@/components/BasicPlayerSection.astro";
 
+import LionelmessiLicense from "@/components/licenses/LionelmessiLicense.astro";
+import KylianmbappeLicense from "@/components/licenses/KylianmbappeLicense.astro";
+import LamineyamalLicense from "@/components/licenses/LamineyamalLicense.astro"
+import JudebellinghamLicense from "@/components/licenses/JudebellinghamLicense.astro";
+import ViniciusjuniorLicense from "@/components/licenses/ViniciusjuniorLicense.astro";
+
 // Assets
-import LionelMessi2026 from "@/assets/lionelmessi-2026.jpg";
-import KylianMbappe2026 from "@/assets/Kylian_Mbappe_-_France_v_Norway_-_26_June_2026_(cropped).jpg";
-import LamineYamal2026 from "@/assets/Lamineyamal-2026.jpg";
-import JudeBelingham2026 from "@/assets/Jude_Bellingham.jpg";
-import ViníciusJúnior2026 from "@/assets/Vinícius_Júnior.jpg";
+import LionelMessi2026 from "@/assets/players/lionelmessi-2026.jpg";
+import KylianMbappe2026 from "@/assets/players/KylianMbappe20260726.jpg";
+import LamineYamal2026 from "@/assets/players/Lamineyamal-2026.jpg";
+import JudeBelingham2026 from "@/assets/players/Jude_Bellingham.jpg";
+import ViniciusJunior2026 from "@/assets/players/Vinicius_Junior.jpg";
 ---
 
 <BasicLayout
@@ -20,10 +26,11 @@ import ViníciusJúnior2026 from "@/assets/Vinícius_Júnior.jpg";
     name="リオネル・アンドレス・メッシ・クッシッティーニ"
     officialname="Lionel Andrés Messi Cuccittini"
     image={LionelMessi2026}
-    license={<>&copy; Bryan Berlin (CC BY-SA 4.0), via <a class="underline hover:no-underline" href="https://commons.wikimedia.org/w/index.php?curid=195518244">Wikimedia Commons</a></>}>
+    license={<LionelmessiLicense/>}
+  >
     ・豊富な経験と卓越した技術を持つ<span class="font-bold">世界最高峰の選手</span><br/>
-    ・ベテランとなった現在でも<span class="font-bold">攻撃の起点</span>としてチームを支え、大会屈指の注目選手<br/>
-    <br/>
+    ・ベテランとなった現在でも<span class="font-bold">攻撃の起点</span>としてチームを支え、大会屈指の注目選手<br/><br/>
+
     <span class="font-bold">【注目ポイント】</span><br/>
     メッシは長年世界トップレベルで活躍し続けているレジェンドである。
     年齢を重ねても高い技術や視野の広さは衰えず、味方を生かすパスや決定力のあるシュートは今でも世界最高クラスだと思う。
@@ -35,11 +42,12 @@ import ViníciusJúnior2026 from "@/assets/Vinícius_Júnior.jpg";
     name="キリアン・ムバッペ"
     officialname="Kylian Mbappé Lottin"
     image={KylianMbappe2026}
-    license={<>&copy; Bryan Berlin (CC BY-SA 4.0), via <a class="underline hover:no-underline" href="https://commons.wikimedia.org/w/index.php?curid=195518244">Wikimedia Commons</a></>}>
-    ・世界屈指の<span class="font-bold">スピード</span>と<span class="font-bold">決定力</span>を兼ね備えたストライカー<br />
-    ・ゴールデンボールの候補の筆頭とされ、優勝候補フランスを牽引する存在<br />
-    <br />
-    <span class="font-bold">【注目ポイント】</span><br />
+    license={<KylianmbappeLicense/>}
+  >
+    ・世界屈指の<span class="font-bold">スピード</span>と<span class="font-bold">決定力</span>を兼ね備えたストライカー<br/>
+    ・ゴールデンボールの候補の筆頭とされ、優勝候補フランスを牽引する存在<br/><br/>
+
+    <span class="font-bold">【注目ポイント】</span><br/>
     最大の魅力は圧倒的なスピードとゴール前での決定力であり、
     相手ディフェンダーを一瞬で置き去りにするプレーは何度見ても驚かされる。
     また、大舞台でも結果を残せる勝負強さがあり、ワールドカップのような大きな大会では特に存在感を発揮する選手だと感じる。
@@ -50,11 +58,12 @@ import ViníciusJúnior2026 from "@/assets/Vinícius_Júnior.jpg";
     name="ラミン・ヤマル"
     officialname="Lamine Yamal"
     image={LamineYamal2026}
-    license={<>&copy; Bryan Berlin (CC BY-SA 4.0), via <a class="underline hover:no-underline" href="https://commons.wikimedia.org/w/index.php?curid=195518244">Wikimedia Commons</a></>}>
-    ・<span class="font-bold">10代</span>ながら高い<span class="font-bold">ドリブル技術</span>と創造性を持つウィング<br />
-    ・若手選手の中でも最も注目されており、スペインの攻撃の中心として期待されている<br />
-    <br />
-    <span class="font-bold">【注目ポイント】</span><br />
+    license={<LamineyamalLicense/>}
+  >
+    ・<span class="font-bold">10代</span>ながら高い<span class="font-bold">ドリブル技術</span>と創造性を持つウィング<br/>
+    ・若手選手の中でも最も注目されており、スペインの攻撃の中心として期待されている<br/><br/>
+
+    <span class="font-bold">【注目ポイント】</span><br/>
     ヤマルは若い選手でありながら落ち着いたプレーができる点が魅力だと思う。
     ドリブルやパスのセンスが非常に高く、相手をかわす技術や味方を生かすプレーには将来性を感じる。
     年齢を考えるとまだまだ成長の余地があり、これから世界最高峰の選手になる可能性を秘めている。
@@ -66,11 +75,12 @@ import ViníciusJúnior2026 from "@/assets/Vinícius_Júnior.jpg";
     name="ジュード・ベリンガム"
     officialname="Jude Bellingham"
     image={JudeBelingham2026}
-    license={<>&copy; Bryan Berlin (CC BY-SA 4.0), via <a class="underline hover:no-underline" href="https://commons.wikimedia.org/w/index.php?curid=195518244">Wikimedia Commons</a></>}>
-    ・攻守両面で活躍できる<span class="font-bold">万能型ミッドフィルダー</span><br />
-    ・<span class="font-bold">得点力</span>と<span class="font-bold">ゲームメイク能力</span>を兼ね備え、イングランドの躍進を支える中心選手<br />
-    <br />
-    <span class="font-bold">【注目ポイント】</span><br />
+    license={<JudebellinghamLicense/>}
+  >
+    ・攻守両面で活躍できる<span class="font-bold">万能型ミッドフィルダー</span><br/>
+    ・<span class="font-bold">得点力</span>と<span class="font-bold">ゲームメイク能力</span>を兼ね備え、イングランドの躍進を支える中心選手<br/><br/>
+
+    <span class="font-bold">【注目ポイント】</span><br/>
     ベリンガムは攻撃だけでなく守備にも積極的に関わる万能型のミッドフィルダーである。
     ボールを奪う力だけでなく、得点やアシストにも絡めるため、試合全体に与える影響が非常に大きい選手だと感じる。
     また、若いにもかかわらずリーダーシップがあり、重要な試合でも堂々とプレーできる精神力も魅力である。
@@ -80,12 +90,13 @@ import ViníciusJúnior2026 from "@/assets/Vinícius_Júnior.jpg";
     slug="viniciusjunior"
     name="ヴィニシウス・ジュニオール"
     officialname="Vinícius Júnior"
-    image={ViníciusJúnior2026}
-    license={<>&copy; Bryan Berlin (CC BY-SA 4.0), via <a class="underline hover:no-underline" href="https://commons.wikimedia.org/w/index.php?curid=195518244">Wikimedia Commons</a></>}>
-    ・<span class="font-bold">スピード</span>と<span class="font-bold">決定力</span>を兼ね備えた<span class="font-bold">ストライカー</span><br />
-    ・<span class="font-bold">創造性</span>と<span class="font-bold">チームワーク</span>を重視する選手<br />
-    <br />
-    <span class="font-bold">【注目ポイント】</span><br />
+    image={ViniciusJunior2026}
+    license={<ViniciusjuniorLicense/>}
+  >
+    ・<span class="font-bold">スピード</span>と<span class="font-bold">決定力</span>を兼ね備えた<span class="font-bold">ストライカー</span><br/>
+    ・<span class="font-bold">創造性</span>と<span class="font-bold">チームワーク</span>を重視する選手<br/><br/>
+
+    <span class="font-bold">【注目ポイント】</span><br/>
     ヴィニシウス・ジュニオールは、スピードと決定力に優れたストライカーとして知られている。
     彼のプレーは、相手のディフェンダーをかわす技術や、味方を生かすプレーに魅力がある。
     また、大舞台でも結果を残せる勝負強さがあり、ワールドカップのような大きな大会では特に存在感を発揮する選手だと感じる。
