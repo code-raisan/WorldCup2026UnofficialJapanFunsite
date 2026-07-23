@@ -1,0 +1,35 @@
+---
+import consts from "@/consts";
+import BasicLayout from "@/layouts/BasicLayout.astro";
+import licenses from "@/data/licenses.json";
+---
+
+<BasicLayout
+  title={`OPENSOURCE LICENSES - ${consts.SITE_NAME}`}
+  heading="OPENSOURCE LICENSES"
+  details="オープンソースライセンス"
+>
+  <div>
+    プロジェクト本体のリポジトリは<a href={consts.GITHUB_URL} class="underline hover:no-underline" target="_blank" rel="noopener noreferrer">こちら</a>から。
+  </div>
+  <table class="mx-auto">
+    <thead>
+      <tr>
+        <th>パッケージ名</th>
+        <th>バージョン</th>
+        <th>ライセンス</th>
+      </tr>
+    </thead>
+    <tbody>
+      {licenses.map((pkg: any) => (
+        <tr>
+          <td>
+            {pkg.repository ? (<a href={pkg.repository} target="_blank" rel="noopener noreferrer">{pkg.name}</a>) : (pkg.name)}
+          </td>
+          <td class="text-center">{pkg.version}</td>
+          <td class="text-center">{pkg.license}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</BasicLayout>

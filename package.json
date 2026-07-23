@@ -7,12 +7,14 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "genlicenses": "node scripts/generate-licenses.mjs"
   },
   "engines": {
     "node": ">=22.0.0",
     "pnpm": ">=10.0.0"
   },
+  "type": "module",
   "dependencies": {
     "@astrojs/react": "^6.0.1",
     "@base-ui/react": "^1.6.0",
@@ -23,6 +25,7 @@
     "astro": "^7.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "license-checker-rseidelsohn": "^5.0.1",
     "lucide-react": "^1.24.0",
     "react": "19.2.7",
     "react-dom": "19.2.7",
