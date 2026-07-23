@@ -8,12 +8,18 @@ import AbstractSection from "@/components/AbstractSection.astro";
 import AbstractPlayerSection from "@/components/AbstractPlayerSection.astro";
 import AbstractPlayerCard from "@/components/AbstractPlayerCard.astro";
 
+import LionelmessiLicense from "@/components/licenses/LionelmessiLicense.astro";
+import KylianmbappeLicense from "@/components/licenses/KylianmbappeLicense.astro";
+import LamineyamalLicense from "@/components/licenses/LamineyamalLicense.astro"
+import JudebellinghamLicense from "@/components/licenses/JudebellinghamLicense.astro";
+import ViniciusjuniorLicense from "@/components/licenses/ViniciusjuniorLicense.astro";
+
 // Assets
-import LionelMessi2026 from "@/assets/lionelmessi-2026.jpg";
-import KylianMbappe2026 from "@/assets/Kylian_Mbappe_-_France_v_Norway_-_26_June_2026_(cropped).jpg";
-import LamineYamal2026 from "@/assets/Lamineyamal-2026.jpg";
-import JudeBelingham2026 from "@/assets/Jude_Bellingham.jpg";
-import ViníciusJúnior2026 from "@/assets/Vinícius_Júnior.jpg";
+import LionelMessi2026 from "@/assets/players/lionelmessi-2026.jpg";
+import KylianMbappe2026 from "@/assets/players/KylianMbappe20260726.jpg";
+import LamineYamal2026 from "@/assets/players/Lamineyamal-2026.jpg";
+import JudeBelingham2026 from "@/assets/players/Jude_Bellingham.jpg";
+import ViniciusJunior2026 from "@/assets/players/Vinicius_Junior.jpg";
 ---
 
 <Root title={consts.SITE_NAME}>
@@ -39,29 +45,56 @@ import ViníciusJúnior2026 from "@/assets/Vinícius_Júnior.jpg";
           image={LionelMessi2026}
           name="リオネル・メッシ"
           link="/players#lionelmessi"
-          license={<>&copy; Bryan Berlin (CC BY-SA 4.0), via <a class="underline hover:no-underline" href="https://commons.wikimedia.org/w/index.php?curid=195518244">Wikimedia Commons</a></>}/>
+          license={<LionelmessiLicense/>}
+        />
         <AbstractPlayerCard
           image={KylianMbappe2026}
           name="キリアン・ムバッペ"
-          link="/players#kylianmbappe"/>
+          link="/players#kylianmbappe"
+          license={<KylianmbappeLicense/>}
+        />
         <AbstractPlayerCard
           image={LamineYamal2026}
           name="ラミン・ヤマル"
-          link="/players#lamineyamal"/>
+          link="/players#lamineyamal"
+          license={<LamineyamalLicense/>}
+        />
         <AbstractPlayerCard
           image={JudeBelingham2026}
           name="ジュード・ベリンガム"
-          link="/players#judebellingham"/>
+          link="/players#judebellingham"
+          license={<JudebellinghamLicense/>}
+        />
         <AbstractPlayerCard
-          image={ViníciusJúnior2026}
+          image={ViniciusJunior2026}
           name="ヴィ二シウス・ジュニオール"
-          link="/players#viniciusjunior"/>
+          link="/players#viniciusjunior"
+          license={<ViniciusjuniorLicense/>}
+        />
       </AbstractPlayerSection>
     </AbstractSection>
     <AbstractSection title="FEATURED GAMES" aka="注目の試合" morelink="/games">
       <p class="max-w-3xl mx-auto px-5 text-center">
         沢山の試合があった中、私たちが注目した試合についての感想をまとめました。
       </p>
+    </AbstractSection>
+    <AbstractSection title="OPEN SOURCE" aka="オープンソース">
+      <div class="max-w-3xl mx-auto px-5 text-center space-y-6">
+        <p class="leading-relaxed">
+          当ファンサイトはオープンソースプロジェクトとして GitHub 上で公開されています。<br/>
+          ソースコードの閲覧、改善提案やバグ報告、プルリクエストを通じた貢献を歓迎しています。
+        </p>
+        <div class="flex justify-center pt-2">
+          <a
+            href={consts.GITHUB_URL} target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-[#24292e] hover:bg-[#1b1f23] text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-200">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.11.81 2.235 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            GitHubでソースコードを見る
+          </a>
+        </div>
+      </div>
     </AbstractSection>
   </main>
   <FooterNav/>
