@@ -25,7 +25,7 @@ pnpm dev
 ## ビルド
 
 ```bash
-pnpm build
+pnpm genlicenses && pnpm build
 ```
 
 ## ライセンス
